@@ -1,0 +1,22 @@
+[
+  {
+    "type": "container-twoColumn",
+    "load": "cn.strong.asyn.style1",
+    "loadType": "-1",
+    "header": {
+      "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png",
+      "text": "异步加载头部",
+      "textColor": "#ff00ff",
+      "type": "customViewByAnnotation"
+    },
+    "items": [
+    ]
+  },
+  {
+    "type": "container-oneColumn",
+    "load": "cn.strong.asyn.style2",
+    "loadType": "1",
+    "items": [
+    ]
+  }
+]

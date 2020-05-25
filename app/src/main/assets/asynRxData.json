@@ -1,0 +1,20 @@
+[
+  {
+    "type": "container-twoColumn",
+    "load": "cn.strong.asyn.style1",
+    "loadType": "-1",
+    "header": {
+      "color": "#ff00ff",
+      "type": "customLoadingView"
+    },
+    "items": [
+    ]
+  },
+  {
+    "type": "container-oneColumn",
+    "load": "cn.strong.asyn.style2",
+    "loadType": "1",
+    "items": [
+    ]
+  }
+]

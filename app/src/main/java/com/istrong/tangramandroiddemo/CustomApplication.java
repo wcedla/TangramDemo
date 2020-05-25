@@ -1,0 +1,38 @@
+package com.istrong.tangramandroiddemo;
+
+import android.app.Application;
+import android.content.Context;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.bumptech.glide.Glide;
+import com.tmall.wireless.tangram.TangramBuilder;
+import com.tmall.wireless.tangram.util.IInnerImageSetter;
+
+public class CustomApplication extends Application {
+
+    public static Context ApplicationContext;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+//        LeakCanary.Config config = LeakCanary.getConfig().newBuilder()
+//                .retainedVisibleThreshold(2)
+//                .build();
+//        LeakCanary.setConfig(config);
+        ApplicationContext = this;
+        //整个app中使用tangram时的通用图片加载器，这边使用的是系统原生的imageview，
+        // 如果有需求是使用自定义的imageview，则直接替换imageview为自定义的imageview的类名即可
+        TangramBuilder.init(this, new IInnerImageSetter() {
+            @Override
+            public <IMAGEVIEW extends ImageView> void doLoadImageUrl(@NonNull IMAGEVIEW imageview, @Nullable String url) {
+                //假设你使用 Glide 加载图片
+                Glide.with(CustomApplication.this).load(url).into(imageview);
+            }
+        }, ImageView.class);
+    }
+}
+
+
