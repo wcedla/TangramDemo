@@ -14,7 +14,7 @@ import com.tmall.wireless.tangram.support.SimpleClickSupport;
 import org.json.JSONObject;
 
 public class CustomCell extends BaseCell<CustomViewByCustomCell> {
-
+    private static final String TAG = "CustomCell";
     private String headerImgUrl;
     private String footerImgUrl;
     private String text;
@@ -56,6 +56,11 @@ public class CustomCell extends BaseCell<CustomViewByCustomCell> {
         if (!TextUtils.isEmpty(textColor)) {
             view.setContentTextColor(textColor);
         }
+    }
+
+    @Override
+    public void unbindView(@NonNull CustomViewByCustomCell view) {
+        super.unbindView(view);
     }
 
     /**

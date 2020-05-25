@@ -72,6 +72,5 @@ public class CustomViewByInterface extends LinearLayout implements ITangramViewL
 
     @Override
     public void postUnBindView(BaseCell cell) {
-
     }
 }

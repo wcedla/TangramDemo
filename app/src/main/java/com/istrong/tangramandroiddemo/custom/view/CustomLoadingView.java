@@ -61,6 +61,5 @@ public class CustomLoadingView extends LinearLayout implements ITangramViewLifeC
 
     @Override
     public void postUnBindView(BaseCell cell) {
-
     }
 }

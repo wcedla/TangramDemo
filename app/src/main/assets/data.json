@@ -1,6 +1,9 @@
 [
   {
     "type": "container-oneColumn",
+    "style": {
+      "bgImgUrl": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+    },
     "items": [
       {
         "type": "customVeiwByInterface",
@@ -27,6 +30,20 @@
         "type": "customViewByViewHolder",
         "headerText": "自定义holder",
         "inputHint": "请输入相关数据"
+      }
+    ]
+  },
+  {
+    "type": "container-fix",
+    "style": {
+      "bgImgUrl": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png",
+      "align": "bottom_right",
+      "x": "20",
+      "y": "20"
+    },
+    "items": [
+      {
+        "type": "CustomTimerView"
       }
     ]
   }

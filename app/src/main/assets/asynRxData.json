@@ -1,5 +1,36 @@
 [
   {
+    "type": "container-oneColumn",
+    "items": [
+      {
+        "type": "customVeiwByInterface",
+        "text": "接口方式自定义View",
+        "style": {
+          "textColor": "#ff00ff",
+          "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+        }
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "注解方式自定义View",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByCustomCell",
+        "text": "自定义customCell",
+        "textColor": "#00ffff",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png",
+        "footImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByViewHolder",
+        "headerText": "自定义holder",
+        "inputHint": "请输入相关数据"
+      }
+    ]
+  },
+  {
     "type": "container-twoColumn",
     "load": "cn.strong.asyn.style1",
     "loadType": "-1",
@@ -14,6 +45,17 @@
     "type": "container-oneColumn",
     "load": "cn.strong.asyn.style2",
     "loadType": "1",
+    "items": [
+    ]
+  },
+  {
+    "type": "container-twoColumn",
+    "load": "cn.strong.asyn.style1",
+    "loadType": "-1",
+    "header": {
+      "color": "#ff00ff",
+      "type": "customLoadingView"
+    },
     "items": [
     ]
   }

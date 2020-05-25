@@ -1,8 +1,7 @@
 package com.istrong.tangramandroiddemo.activity;
 
-import android.content.Context;
-import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -19,11 +18,15 @@ import com.istrong.tangramandroiddemo.custom.view.CustomLoadingView;
 import com.istrong.tangramandroiddemo.custom.view.CustomViewByAnnotation;
 import com.istrong.tangramandroiddemo.custom.view.CustomViewByCustomCell;
 import com.istrong.tangramandroiddemo.custom.view.CustomViewByInterface;
+import com.istrong.tangramandroiddemo.utils.JSONArrayObservable;
+import com.istrong.tangramandroiddemo.utils.Utils;
 import com.tmall.wireless.tangram.TangramBuilder;
 import com.tmall.wireless.tangram.TangramEngine;
 import com.tmall.wireless.tangram.dataparser.concrete.Card;
+import com.tmall.wireless.tangram.op.AppendGroupOp;
 import com.tmall.wireless.tangram.op.LoadGroupOp;
 import com.tmall.wireless.tangram.op.LoadMoreOp;
+import com.tmall.wireless.tangram.op.ParseSingleGroupOp;
 import com.tmall.wireless.tangram.structure.BaseCell;
 import com.tmall.wireless.tangram.structure.viewcreator.ViewHolderCreator;
 import com.tmall.wireless.tangram.support.ExposureSupport;
@@ -34,14 +37,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -50,7 +52,9 @@ import io.reactivex.schedulers.Schedulers;
 
 public class TangramRxAsynActivity extends AppCompatActivity {
 
+    private static final String TAG = "TangramRxAsynActivity";
     private RecyclerView asynRxRv;
+    private TangramEngine tangramEngine;
 
     private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
@@ -65,12 +69,13 @@ public class TangramRxAsynActivity extends AppCompatActivity {
         builder.registerCell("customViewByCustomCell", CustomCell.class, CustomViewByCustomCell.class);
         builder.registerCell("customViewByViewHolder", CustomHolderCell.class, new ViewHolderCreator<>(R.layout.custom_view_by_custom_holder_layout, CustomViewHolderForCustomHolderCell.class, LinearLayout.class));
         builder.registerCell("customLoadingView", CustomLoadingView.class);
-        final TangramEngine tangramEngine = builder.build();
+        tangramEngine = builder.build();
         tangramEngine.setSupportRx(true);
         tangramEngine.enableAutoLoadMore(true);
         tangramEngine.register(SimpleClickSupport.class, new CustomClickSupportDisableOptimized());
         tangramEngine.register(ExposureSupport.class, new CustomExposureSupport());
         WeakReference<TangramEngine> tangramEngineWeakReference = new WeakReference<>(tangramEngine);
+        //CardLoadSupport.setInitialPage(10);
         CardLoadSupport cardLoadSupport = new CardLoadSupport();
         Observable<Card> cardObservable = cardLoadSupport.observeCardLoading();
         Disposable cardDisposable = cardObservable
@@ -99,7 +104,7 @@ public class TangramRxAsynActivity extends AppCompatActivity {
                         }
                         return new LoadGroupOp(card, new ArrayList<>());
                     }
-                })
+                }).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(cardLoadSupport.asDoLoadFinishConsumer());
         mCompositeDisposable.add(cardDisposable);
         Observable<Card> cardLoadMoreObservable = cardLoadSupport.observeCardLoadingMore();
@@ -139,61 +144,36 @@ public class TangramRxAsynActivity extends AppCompatActivity {
                 tangramEngine.onScrolled();
             }
         });
-        String json = new String(getAssetsFile(this, "asynRxData.json"));
-        JSONArray data = null;
-        try {
-            data = new JSONArray(json);
-            tangramEngine.setData(data);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        Disposable jsonDisposable = Observable.create((ObservableOnSubscribe<JSONArray>) emitter -> {
+            String json = new String(Utils.getAssertsFile(getApplicationContext(), "asynRxData.json"));
+            JSONArray data = null;
+            try {
+                data = new JSONArray(json);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            emitter.onNext(data);
+            emitter.onComplete();
+        }).flatMap((Function<JSONArray, ObservableSource<JSONObject>>) jsonArray -> JSONArrayObservable.fromJsonArray(jsonArray))
+                .map(jsonObject -> {
+                    Log.d(TAG, "单独object:" + jsonObject);
+                    return new ParseSingleGroupOp(jsonObject, tangramEngine);
+                }).compose(tangramEngine.getSingleGroupTransformer())
+                .filter(card -> card.isValid()).map(new Function<Card, AppendGroupOp>() {
+                    @Override
+                    public AppendGroupOp apply(Card card) throws Exception {
+                        Thread.sleep(300);
+                        return new AppendGroupOp(card);
+                    }
+                }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(tangramEngine.asAppendGroupConsumer(), Throwable::printStackTrace);
+        mCompositeDisposable.add(jsonDisposable);
     }
 
     @Override
     protected void onDestroy() {
         mCompositeDisposable.dispose();
         super.onDestroy();
-    }
-
-    /**
-     * 获取assets目录下文件的字节数组
-     *
-     * @param context  上下文
-     * @param fileName assets目录下的文件
-     * @return assets目录下文件的字节数组
-     */
-    public static byte[] getAssetsFile(Context context, String fileName) {
-        InputStream inputStream;
-        AssetManager assetManager = context.getAssets();
-        try {
-            inputStream = assetManager.open(fileName);
-
-            BufferedInputStream bis = null;
-            int length;
-            try {
-                bis = new BufferedInputStream(inputStream);
-                length = bis.available();
-                byte[] data = new byte[length];
-                bis.read(data);
-
-                return data;
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                if (bis != null) {
-                    try {
-                        bis.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-
-            return null;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
     }
 }

@@ -20,6 +20,8 @@ import com.tmall.wireless.tangram.util.ImageUtils;
 
 public class CustomViewByAnnotation extends LinearLayout {
 
+    private static final String TAG = "CustomViewByAnnotation";
+
     private TextView textView;
     private ImageView imageView;
 
