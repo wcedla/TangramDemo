@@ -56,6 +56,6 @@ public class CustomViewByCustomCell extends LinearLayout {
     }
 
     public void setFooterImg(String imgUrl) {
-        Glide.with(CustomApplication.ApplicationContext).load(imgUrl).into(footerImg);
+        Glide.with(CustomApplication.applicationContext).load(imgUrl).into(footerImg);
     }
 }

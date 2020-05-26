@@ -1,7 +1,11 @@
 package com.istrong.tangramandroiddemo.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
+
+import com.istrong.tangramandroiddemo.CustomApplication;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -53,4 +57,10 @@ public class Utils {
 
         return null;
     }
+
+    public static void launchActivity(Class<? extends Activity> clz) {
+        Intent intent = new Intent(CustomApplication.applicationContext, clz);
+        CustomApplication.applicationContext.startActivity(intent);
+    }
+
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "type": "container-oneColumn",
+    "style": {
+      "bgImgUrl": "https://gw.alicdn.com/tps/TB1dkjfOXXXXXb0aXXXXXXXXXXX-1125-220.png",
+      "margin": [
+        20,
+        0,
+        0,
+        20
+      ]
+    },
+    "items": [
+      {
+        "type": "customVeiwByInterface",
+        "text": "接口方式自定义View"
+      }
+    ]
+  }
+]

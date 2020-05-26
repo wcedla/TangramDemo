@@ -18,7 +18,7 @@ public class CustomClickSupportEnableOptimized extends SimpleClickSupport {
     public void defaultClick(View targetView, BaseCell cell, int eventType) {
         Log.d("wcedlaLog", "点击的组件类型名是:" + targetView.getClass().getName()
                 + "cell的type是:" + cell.stringType + ",cell的位置是:" + cell.pos);
-        Toast.makeText(CustomApplication.ApplicationContext,
+        Toast.makeText(CustomApplication.applicationContext,
                 "点击的组件类型名是:" + targetView.getClass().getName()
                         + ",cell的type是:" + cell.stringType + ",cell的位置是:" + cell.pos,
                 Toast.LENGTH_SHORT).show();

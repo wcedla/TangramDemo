@@ -32,18 +32,18 @@ public class CustomClickSupportDisableOptimized extends SimpleClickSupport {
             }
         }
         Log.d("wcedlaLog", "默认实现的点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos);
-        Toast.makeText(CustomApplication.ApplicationContext, "默认实现的点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos, Toast.LENGTH_SHORT).show();
+        Toast.makeText(CustomApplication.applicationContext, "默认实现的点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos, Toast.LENGTH_SHORT).show();
 
     }
 
     public void onClickAnnotationComponent(CustomViewByAnnotation targetView, BaseCell cell, int type) {
         Log.d("wcedlaLog", "未优化时点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos);
-        Toast.makeText(CustomApplication.ApplicationContext, "未优化时点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos, Toast.LENGTH_SHORT).show();
+        Toast.makeText(CustomApplication.applicationContext, "未优化时点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos, Toast.LENGTH_SHORT).show();
     }
 
     public void onClickCustomCellComponent(View targetView, BaseCell cell, int type) {
         Log.d("wcedlaLog", "自定义model点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos);
-        Toast.makeText(CustomApplication.ApplicationContext, "自定义model点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos, Toast.LENGTH_SHORT).show();
+        Toast.makeText(CustomApplication.applicationContext, "自定义model点击:" + targetView.getClass().getName() + ",cell的类型:" + cell.stringType + ",cell位置:" + cell.pos, Toast.LENGTH_SHORT).show();
     }
 
 }

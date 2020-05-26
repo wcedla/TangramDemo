@@ -10,7 +10,13 @@
         "text": "接口方式自定义View",
         "style": {
           "textColor": "#ff00ff",
-          "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+          "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png",
+          "margin": [
+            50,
+            0,
+            0,
+            50
+          ]
         }
       },
       {
@@ -44,6 +50,19 @@
     "items": [
       {
         "type": "CustomTimerView"
+      }
+    ]
+  },
+  {
+    "type": "container-flow",
+    "items": [
+      {
+        "type": "customVeiwByInterface",
+        "text": "接口方式自定义View",
+        "style": {
+          "textColor": "#ff00ff",
+          "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+        }
       }
     ]
   }

@@ -13,7 +13,7 @@ import com.tmall.wireless.tangram.util.IInnerImageSetter;
 
 public class CustomApplication extends Application {
 
-    public static Context ApplicationContext;
+    public static Context applicationContext;
 
     @Override
     public void onCreate() {
@@ -22,7 +22,7 @@ public class CustomApplication extends Application {
 //                .retainedVisibleThreshold(2)
 //                .build();
 //        LeakCanary.setConfig(config);
-        ApplicationContext = this;
+        applicationContext = this;
         //整个app中使用tangram时的通用图片加载器，这边使用的是系统原生的imageview，
         // 如果有需求是使用自定义的imageview，则直接替换imageview为自定义的imageview的类名即可
         TangramBuilder.init(this, new IInnerImageSetter() {
