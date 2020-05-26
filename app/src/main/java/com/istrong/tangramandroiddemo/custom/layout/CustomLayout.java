@@ -1,4 +1,4 @@
-package com.istrong.tangramandroiddemo.layout;
+package com.istrong.tangramandroiddemo.custom.layout;
 
 import com.tmall.wireless.tangram.dataparser.concrete.Card;
 

@@ -175,5 +175,8 @@ public class TangramRxAsynActivity extends AppCompatActivity {
     protected void onDestroy() {
         mCompositeDisposable.dispose();
         super.onDestroy();
+        if (tangramEngine != null) {
+            tangramEngine.destroy();
+        }
     }
 }

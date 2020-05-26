@@ -60,6 +60,7 @@ public class Utils {
 
     public static void launchActivity(Class<? extends Activity> clz) {
         Intent intent = new Intent(CustomApplication.applicationContext, clz);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         CustomApplication.applicationContext.startActivity(intent);
     }
 

@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.StreamingActivity"></activity>
+        <activity android:name=".activity.FlowActivity"></activity>
+        <activity android:name=".activity.PullLayoutActivity" />
+        <activity android:name=".activity.StreamingActivity" />
         <activity android:name=".activity.LayoutActivity" />
         <activity android:name=".activity.TangramRxAsynActivity" />
         <activity android:name=".activity.TangramAsynActivity" />

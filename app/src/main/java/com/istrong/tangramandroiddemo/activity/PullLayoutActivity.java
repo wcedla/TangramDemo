@@ -26,17 +26,17 @@ import org.json.JSONException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class StreamingActivity extends AppCompatActivity {
+public class PullLayoutActivity extends AppCompatActivity {
 
-    @BindView(R.id.streamimgRv)
-    RecyclerView streamimgRv;
+    @BindView(R.id.pullLayoutRv)
+    RecyclerView pullLayoutRv;
 
     private TangramEngine tangramEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_streaming);
+        setContentView(R.layout.activity_pull_layout);
         ButterKnife.bind(this);
         initTangram();
     }
@@ -51,14 +51,14 @@ public class StreamingActivity extends AppCompatActivity {
         builder.registerCell("CustomTimerView", CustomTimerView.class);
         //获得tangramEngine，绘制引擎
         tangramEngine = builder.build();
-        tangramEngine.bindView(streamimgRv);
-        streamimgRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        tangramEngine.bindView(pullLayoutRv);
+        pullLayoutRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 tangramEngine.onScrolled();
             }
         });
-        byte[] bytes = Utils.getAssertsFile(this, "streamLayout.json");
+        byte[] bytes = Utils.getAssertsFile(this, "pullLayout.json");
         if (bytes != null) {
             String json = new String(bytes);
             try {

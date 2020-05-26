@@ -1,0 +1,19 @@
+[
+  {
+    "type": "container-float",
+    "items": [
+      {
+        "type": "CustomFlowView",
+        "text": "浮动的view",
+        "textColor": "#000000",
+        "bgColor": "#ff0000"
+      }
+    ],
+    "style": {
+      "align": "bottom_right",
+      "x": "50",
+      "y": "50",
+      "bgColor": "#FF0000"
+    }
+  }
+]

@@ -46,8 +46,10 @@ public class LayoutActivity extends AppCompatActivity {
                 Utils.launchActivity(StreamingActivity.class);
                 break;
             case R.id.pullLayoutBtn:
+                Utils.launchActivity(PullLayoutActivity.class);
                 break;
             case R.id.flowLayoutBtn:
+                Utils.launchActivity(FlowActivity.class);
                 break;
             case R.id.fixLayoutBtn:
                 break;

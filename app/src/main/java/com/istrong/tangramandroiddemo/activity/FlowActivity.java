@@ -11,6 +11,7 @@ import com.istrong.tangramandroiddemo.R;
 import com.istrong.tangramandroiddemo.custom.cell.CustomCell;
 import com.istrong.tangramandroiddemo.custom.cell.CustomHolderCell;
 import com.istrong.tangramandroiddemo.custom.holder.CustomViewHolderForCustomHolderCell;
+import com.istrong.tangramandroiddemo.custom.view.CustomFlowView;
 import com.istrong.tangramandroiddemo.custom.view.CustomTimerView;
 import com.istrong.tangramandroiddemo.custom.view.CustomViewByAnnotation;
 import com.istrong.tangramandroiddemo.custom.view.CustomViewByCustomCell;
@@ -26,17 +27,17 @@ import org.json.JSONException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class StreamingActivity extends AppCompatActivity {
+public class FlowActivity extends AppCompatActivity {
 
-    @BindView(R.id.streamimgRv)
-    RecyclerView streamimgRv;
+    @BindView(R.id.flowLayoutRv)
+    RecyclerView flowLayoutRv;
 
     private TangramEngine tangramEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_streaming);
+        setContentView(R.layout.activity_flow);
         ButterKnife.bind(this);
         initTangram();
     }
@@ -49,16 +50,17 @@ public class StreamingActivity extends AppCompatActivity {
         builder.registerCell("customViewByCustomCell", CustomCell.class, CustomViewByCustomCell.class);
         builder.registerCell("customViewByViewHolder", CustomHolderCell.class, new ViewHolderCreator<>(R.layout.custom_view_by_custom_holder_layout, CustomViewHolderForCustomHolderCell.class, LinearLayout.class));
         builder.registerCell("CustomTimerView", CustomTimerView.class);
+        builder.registerCell("CustomFlowView", CustomFlowView.class);
         //获得tangramEngine，绘制引擎
         tangramEngine = builder.build();
-        tangramEngine.bindView(streamimgRv);
-        streamimgRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        tangramEngine.bindView(flowLayoutRv);
+        flowLayoutRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 tangramEngine.onScrolled();
             }
         });
-        byte[] bytes = Utils.getAssertsFile(this, "streamLayout.json");
+        byte[] bytes = Utils.getAssertsFile(this, "flowLayout.json");
         if (bytes != null) {
             String json = new String(bytes);
             try {
