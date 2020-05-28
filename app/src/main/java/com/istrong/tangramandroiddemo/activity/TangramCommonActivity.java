@@ -136,7 +136,7 @@ public class TangramCommonActivity extends AppCompatActivity {
             }
         });
         // 设置悬浮类型布局的偏移（可选）
-        tangramEngine.getLayoutManager().setFixOffset(0, 40, 0, 0);
+        tangramEngine.getLayoutManager().setFixOffset(0, 0, 0, 0);
         // 设置卡片预加载的偏移量（可选）
         tangramEngine.setPreLoadNumber(3);
         byte[] bytes = Utils.getAssertsFile(this, "data.json");

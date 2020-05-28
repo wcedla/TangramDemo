@@ -27,7 +27,7 @@ import org.json.JSONException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FlowActivity extends AppCompatActivity {
+public class FlowLayoutActivity extends AppCompatActivity {
 
     @BindView(R.id.flowLayoutRv)
     RecyclerView flowLayoutRv;

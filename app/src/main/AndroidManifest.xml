@@ -13,7 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.FlowActivity"></activity>
+        <activity android:name=".activity.VirtualViewActivity"></activity>
+        <activity android:name=".activity.HorizontalScrollLayoutActivity" />
+        <activity android:name=".activity.BannerLayoutActivity" />
+        <activity android:name=".activity.WaterfallsActivity" />
+        <activity android:name=".activity.CeilLayoutActivity" />
+        <activity android:name=".activity.FixLayoutActivity" />
+        <activity android:name=".activity.FlowLayoutActivity" />
         <activity android:name=".activity.PullLayoutActivity" />
         <activity android:name=".activity.StreamingActivity" />
         <activity android:name=".activity.LayoutActivity" />

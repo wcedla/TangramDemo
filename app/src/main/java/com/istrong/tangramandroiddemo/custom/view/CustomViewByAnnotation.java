@@ -2,6 +2,7 @@ package com.istrong.tangramandroiddemo.custom.view;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -69,6 +70,10 @@ public class CustomViewByAnnotation extends LinearLayout {
         textView.setTextColor(Color.parseColor(cell.optStringParam("textColor")));
         textView.setText(cell.optParam("text").toString());
         ImageUtils.doLoadImageUrl(imageView, cell.optStringParam("headImg"));
+        String bgColor = cell.optStringParam("bgColor");
+        if (!TextUtils.isEmpty(bgColor)) {
+            setBackgroundColor(Color.parseColor(bgColor));
+        }
     }
 
     @CellRender

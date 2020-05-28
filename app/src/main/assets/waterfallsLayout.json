@@ -1,0 +1,66 @@
+[
+  {
+    "type": "container-waterfall",
+    "items": [
+      {
+        "type": "customViewByAnnotation",
+        "text": "瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "CustomFlowView",
+        "text": "瀑布流布局2",
+        "textColor": "#000000",
+        "bgColor": "#ff0000"
+      },
+      {
+        "type": "CustomFlowView",
+        "text": "瀑布流布局2",
+        "textColor": "#000000",
+        "bgColor": "#ff0000"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "瀑布流布局1",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "CustomFlowView",
+        "text": "瀑布流布局2",
+        "textColor": "#000000",
+        "bgColor": "#ff0000"
+      },
+      {
+        "type": "CustomFlowView",
+        "text": "瀑布流布局2",
+        "textColor": "#000000",
+        "bgColor": "#ff0000"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1瀑布流布局1",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      }
+    ],
+    "style": {
+      "hGap": "10",
+      "vGap": "10",
+      "column": "2",
+      "margin": [
+        10,
+        10,
+        10,
+        10
+      ]
+    }
+  }
+]

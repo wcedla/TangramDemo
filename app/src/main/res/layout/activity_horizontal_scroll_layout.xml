@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.FlowLayoutActivity">
+    tools:context=".activity.HorizontalScrollLayoutActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/flowLayoutRv"
+        android:id="@+id/horizontalLayoutRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"

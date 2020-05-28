@@ -31,6 +31,8 @@ public class LayoutActivity extends AppCompatActivity {
     Button bannerLayoutBtn;
     @BindView(R.id.horizontalScrollLayoutBtn)
     Button horizontalScrollLayoutBtn;
+    @BindView(R.id.virtualViewLayoutBtn)
+    Button virtualViewLayoutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class LayoutActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.streamingLayoutBtn, R.id.pullLayoutBtn, R.id.flowLayoutBtn, R.id.fixLayoutBtn, R.id.ceilLayoutBtn, R.id.waterfallsLayoutBtn, R.id.bannerLayoutBtn, R.id.horizontalScrollLayoutBtn})
+    @OnClick({R.id.virtualViewLayoutBtn, R.id.streamingLayoutBtn, R.id.pullLayoutBtn, R.id.flowLayoutBtn, R.id.fixLayoutBtn, R.id.ceilLayoutBtn, R.id.waterfallsLayoutBtn, R.id.bannerLayoutBtn, R.id.horizontalScrollLayoutBtn})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.streamingLayoutBtn:
@@ -49,17 +51,25 @@ public class LayoutActivity extends AppCompatActivity {
                 Utils.launchActivity(PullLayoutActivity.class);
                 break;
             case R.id.flowLayoutBtn:
-                Utils.launchActivity(FlowActivity.class);
+                Utils.launchActivity(FlowLayoutActivity.class);
                 break;
             case R.id.fixLayoutBtn:
+                Utils.launchActivity(FixLayoutActivity.class);
                 break;
             case R.id.ceilLayoutBtn:
+                Utils.launchActivity(CeilLayoutActivity.class);
                 break;
             case R.id.waterfallsLayoutBtn:
+                Utils.launchActivity(WaterfallsActivity.class);
                 break;
             case R.id.bannerLayoutBtn:
+                Utils.launchActivity(BannerLayoutActivity.class);
                 break;
             case R.id.horizontalScrollLayoutBtn:
+                Utils.launchActivity(HorizontalScrollLayoutActivity.class);
+                break;
+            case R.id.virtualViewLayoutBtn:
+                Utils.launchActivity(VirtualViewActivity.class);
                 break;
             default:
                 break;

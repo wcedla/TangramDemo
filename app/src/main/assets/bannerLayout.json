@@ -1,0 +1,141 @@
+[
+  {
+    "type": "container-banner",
+    "items": [
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件1",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件2",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件3",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      }
+    ],
+    "style": {
+      "indicatorImg1": "https://gw.alicdn.com/tps/TB16RaxLpXXXXbIXFXXXXXXXXXX-14-14.png",
+      "indicatorImg2": "https://gw.alicdn.com/tps/TB1m79uLpXXXXXUXVXXXXXXXXXX-18-16.png",
+      "indicatorGravity": "center",
+      "indicatorPosition": "outside",
+      "indicatorMargin": 10,
+      "indicatorGap": 2,
+      "scrollMarginLeft": 20,
+      "scrollMarginRight": 20,
+      "infinite": true,
+      "hGap": 12,
+      "autoScroll": 2000,
+      "pageRatio": 0.5,
+      "bgColor": "#ffffff"
+    }
+  },
+  {
+    "type": "container-banner",
+    "items": [
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件1",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件2",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件3",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      }
+    ],
+    "style": {
+      "itemRatio": 2,
+      "pageRatio": 1,
+      "autoScroll": 3000,
+      "infinite": true,
+      "indicatorImg1": "https://img.alicdn.com/tps/TB16i4qNXXXXXbBXFXXXXXXXXXX-32-4.png",
+      "indicatorImg2": "https://img.alicdn.com/tps/TB1XRNFNXXXXXXKXXXXXXXXXXXX-32-4.png",
+      "indicatorGravity": "center",
+      "indicatorPosition": "inside",
+      "indicatorGap": 5,
+      "indicatorMargin": 8,
+      "indicatorHeight": 2,
+      "hGap": 20,
+      "bgColor": "#ff0000"
+    }
+  },
+  {
+    "type": "container-banner",
+    "items": [
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件1",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件2",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件3",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      }
+    ],
+    "style": {
+      "itemRatio": 2,
+      "pageRatio": 1,
+      "autoScroll": 3000,
+      "infinite": true,
+      "indicatorImg1": "https://img.alicdn.com/tps/TB16i4qNXXXXXbBXFXXXXXXXXXX-32-4.png",
+      "indicatorImg2": "https://img.alicdn.com/tps/TB1XRNFNXXXXXXKXXXXXXXXXXXX-32-4.png",
+      "indicatorGravity": "center",
+      "indicatorPosition": "inside",
+      "indicatorGap": 5,
+      "pageWidth": "20",
+      "indicatorMargin": 8,
+      "indicatorHeight": 2,
+      "scrollMarginLeft": 50,
+      "scrollMarginRight": 50,
+      "hGap": 20,
+      "bgColor": "#ff0000"
+    }
+  }
+]

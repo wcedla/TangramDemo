@@ -1,0 +1,42 @@
+[
+  {
+    "type": "container-scroll",
+    "items": [
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      },
+      {
+        "type": "customViewByAnnotation",
+        "text": "banner组件4",
+        "textColor": "#000000",
+        "bgColor": "#2483CF",
+        "headImg": "https://gw.alicdn.com/tfs/TB1vqF.PpXXXXaRaXXXXXXXXXXX-110-72.png"
+      }
+    ],
+    "style": {
+      "pageWidth": 200,
+      "pageHeight": -1,
+      "hasIndicator": true,
+      "indicatorColor": "#FF0000",
+      "defaultIndicatorColor": "#666666"
+    }
+  }
+]
